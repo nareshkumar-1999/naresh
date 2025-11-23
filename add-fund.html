@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Funds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Add Funds to Wallet</h2>
+
+        <div id="amount-entry-section">
+            <p>Your current balance is: <strong id="current-balance">₹0.00</strong></p>
+            <form id="addFundForm">
+                <div class="input-group">
+                    <label for="amount">Amount to Add (₹):</label>
+                    <input type="number" id="amount" min="300" placeholder="Minimum ₹300" required>
+                </div>
+                <button type="submit">Generate QR Code</button>
+            </form>
+        </div>
+
+        <div id="qr-code-section" class="hidden">
+            <h3>Scan to Pay</h3>
+            <p>Pay <strong id="payment-amount"></strong> using any UPI app.</p>
+            <div id="qrcode"></div>
+            <p>Or pay directly with:</p>
+            <div class="payment-app-btns">
+                <a id="gpay-btn" class="payment-app-btn gpay" href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/2560px-Google_Pay_Logo.svg.png" alt="Google Pay"></a>
+                <a id="phonepe-btn" class="payment-app-btn phonepe" href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/PhonePe_Logo.svg/2560px-PhonePe_Logo.svg.png" alt="PhonePe"></a>
+                <a id="paytm-btn" class="payment-app-btn paytm" href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_Logo.svg/2560px-Paytm_Logo.svg.png" alt="Paytm"></a>
+                <a id="other-upi-btn" class="payment-app-btn other-upi" href="#" target="_blank">Other UPI Apps</a>
+            </div>
+            <p>UPI ID: <strong>8965812465@ybl</strong></p>
+            <div class="payment-numbers">
+                <p class="phonepe-number">PhonePe: <strong>8965812465</strong></p>
+                <p class="paytm-number">Paytm: <strong>8965812465</strong></p>
+                <p class="gpay-number">Google Pay: <strong>8965812465</strong></p>
+            </div>
+            <div class="screenshot-notice">
+                <p><strong>Important:</strong> Deposit करने के बाद स्क्रीनशॉट WhatsApp पर भेजें।</p>
+            </div>
+            <div class="payment-simulation-btns">
+                <button id="payment-success-btn" class="win-btn">I Have Paid</button>
+                <button id="payment-fail-btn" class="loss-btn">Cancel Payment</button>
+            </div>
+        </div>
+
+        <div class="register-link">
+            <p><a href="home.html">Back to Home</a></p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-nav">
+            <a href="game-history.html">📜 History</a>
+            <a href="home.html" class="footer-home-btn">🏠 Home</a>
+            <a href="add-fund.html">💸 Add Fund</a>
+        </div>
+    </footer>
+    <!-- QR Code Generation Library -->
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <script src="api-config.js"></script>
+    <script src="user-panel.js"></script>
+    <script src="add-fund.js"></script>
+</body>
+</html>

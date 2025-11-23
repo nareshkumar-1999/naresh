@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="header-left">
+                <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                </button>
+                <a href="home.html" class="logo logo-styled"><span>MITHUN</span><span class="logo-second-line">🏺 MATKA</span></a>
+            </div>
+            <div class="header-right">
+                <a href="add-fund.html" class="header-link">💰 Add Fund</a>
+                <a href="#" class="header-link">🔔 Notification</a>
+                <span id="wallet-balance" class="wallet-balance">👛 ₹0.00</span>
+            </div>
+        </nav>
+    </header>
+    <div id="dropdown-menu" class="dropdown-content">
+        <!-- Sidebar links will be populated by JS -->
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <div class="page-container">
+        <h1>Notice Board</h1>
+        <div id="notifications-container"></div>
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="game-history.html">📜 History</a>
+            <a href="home.html" class="footer-home-btn">🏠 Home</a>
+            <a href="add-fund.html">💸 Add Fund</a>
+        </div>
+    </footer>
+
+    <script src="data-store.js"></script>
+    <script src="user-panel.js"></script>
+    <script src="notification.js"></script>
+</body>
+</html>

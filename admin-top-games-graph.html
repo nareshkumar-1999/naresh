@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Games Graph</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-header">
+        <h1>📈 Top Games by Bid Amount</h1>
+        <a href="admin.html" class="logout-button">Back to Admin Panel</a>
+    </div>
+
+    <div class="page-container">
+        <div class="dashboard-card chart-container">
+            <h3>Top 10 Games by Total Bid Amount</h3>
+            <canvas id="topGamesChart"></canvas>
+        </div>
+    </div>
+
+    <style>
+        /* Ensure canvas is responsive */
+        #topGamesChart {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <!-- Chart.js library for creating graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Your custom scripts -->
+    <script src="data-store.js"></script>
+    <script src="admin-top-games-graph.js"></script>
+</body>
+</html>

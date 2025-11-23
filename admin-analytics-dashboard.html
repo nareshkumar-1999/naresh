@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-header">
+        <h1>📊 Analytics Dashboard</h1>
+        <a href="admin.html" class="logout-button">Back to Admin Panel</a>
+    </div>
+
+    <div class="page-container">
+        <div class="dashboard-card chart-container">
+            <h3>Last 7 Days Bids vs. Winnings</h3>
+            <canvas id="analyticsChart"></canvas>
+        </div>
+    </div>
+
+    <style>
+        /* Ensure canvas is responsive */
+        #analyticsChart {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <!-- Chart.js library for creating graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Your custom scripts -->
+    <script src="data-store.js"></script>
+    <script src="admin-analytics-dashboard.js"></script>
+</body>
+</html>

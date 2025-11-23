@@ -1,0 +1,1469 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5; /* A clean, light grey background like modern apps */
+    margin: 0;
+    padding-top: 60px; /* Space for fixed header */
+    padding-bottom: 60px; /* Space for fixed footer */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.login-container { 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Softer, more pronounced shadow */
+    width: 90%;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+.login-logo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.login-logo svg {
+    width: 60px;
+    height: 60px;
+    color: #007bff;
+}
+.login-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.input-group { 
+    margin-bottom: 1.5rem; /* More space between inputs */
+    position: relative;
+}
+.page-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+.password-wrapper { position: relative; } 
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.2rem;
+}
+label { display: none; /* Replaced by placeholder */ }
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 15px; /* Taller inputs */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    padding-left: 45px; /* Make space for the icon */
+}
+.password-wrapper input {
+    padding-right: 5rem; /* Make space for the "Show" button */
+}
+.toggle-password {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 4.5rem; /* Give the button a fixed width */
+    background: none;
+    border: none;
+    border-left: 1px solid #ddd;
+    cursor: pointer;
+    color: #666;
+    font-size: 0.9em;
+}
+button {
+    width: 100%;
+    padding: 14px; /* Taller button */
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Gradient button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+button:hover { opacity: 0.9; }
+.register-link, .forgot-password-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+.register-link a, .forgot-password-link a { color: #007bff; text-decoration: none; } /* Blue links */
+
+/* Styles for OTP message container on Forgot Password page */
+#otp-message-container {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Utility class to hide elements visually but keep them accessible */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* --- Profile Page Specific Styles --- */
+.profile-pic-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+.change-pic-btn {
+    display: block;
+    margin: 10px auto 0;
+    width: auto;
+    padding: 6px 12px;
+    background-color: #6c757d;
+}
+.login-container h4 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: #007bff;
+}
+.profile-page .login-container {
+    background: #f8f9fa; /* Lighter background for the container */
+}
+
+/* Style for labels like "Full Name", "Account Number" */
+.profile-page label {
+    display: block; /* Make labels visible on profile page */
+    font-size: 1.1rem; /* Slightly larger font */
+    font-weight: 600; /* Bolder */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 0.5rem;
+}
+
+/* Style for the "Bank Details" heading */
+.profile-page h4 {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.3rem;
+    border-bottom: none; /* Remove the old border */
+}
+
+/* Style for input fields */
+.profile-page input {
+    background-color: #ffffff;
+    border: 2px solid #dee2e6; /* Thicker border */
+    font-weight: 500;
+    padding-left: 45px; /* Make space for icon */
+}
+.profile-page input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Style for the "Save Changes" button */
+.profile-page #save-button {
+    background: linear-gradient(45deg, #28a745, #218838); /* Green gradient */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px;
+    text-transform: uppercase;
+}
+
+/* Style for "Back to Home | Logout" links */
+.profile-page .register-link a {
+    font-weight: 500;
+}
+
+/* --- Tabs Styles for History Page --- */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ddd;
+}
+.tab-link {
+    background: none;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 3px solid transparent;
+}
+.tab-link.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+/* --- Home Page Styles --- */
+header { position: fixed; top: 0; left: 0; width: 100%; background: linear-gradient(90deg, #4e54c8, #8f94fb); color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 1000; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; height: 60px; }
+.header-left {
+    display: flex;
+    align-items: center; 
+    gap: 1rem;
+}
+.logo { font-weight: bold; font-size: 1.5rem; color: white; text-decoration: none; }
+.logo-styled {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    margin-left: 10px;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #007bff, 0 0 20px #007bff, 0 0 25px #007bff, 0 0 30px #007bff, 0 0 35px #007bff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+.logo-second-line {
+    font-size: 0.8em;
+}
+.header-right { display: flex; align-items: center; gap: 1rem; }
+.header-link, .wallet-balance { color: white; text-decoration: none; font-size: 1rem; }
+.wallet-balance { 
+    font-weight: 500; 
+    font-size: 1.1rem; 
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+/* Dropdown Menu */
+.menu-container { position: static; } /* Change from relative */
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Sidebar Styles (previously .dropdown-content) */
+.dropdown-content {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2000; /* Higher z-index */
+    top: 0;
+    left: 0;
+    background: white; /* Default background */
+    overflow-x: hidden;
+    transition: transform 0.3s ease-in-out, background 0.5s ease;
+    transform: translateX(-100%); /* Start off-screen to the left */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+}
+.dropdown-content a { color: black; padding: 15px 20px; text-decoration: none; display: block; font-size: 1.1rem; }
+.dropdown-content a:hover { background-color: #f1f1f1; }
+
+/* Active state for the sidebar */
+.show {
+    transform: translateX(0);
+}
+
+/* Animate menu button to 'X' */
+.menu-btn.open .menu-bar:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menu-btn.open .menu-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.open .menu-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1500; /* Below sidebar, above content */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease-in-out;
+}
+.overlay.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+main { padding: 2rem 1rem; text-align: center; }
+
+/* Marquee (Scrolling Text) Styles */
+.marquee-container {
+    background: linear-gradient(90deg, #1d2b64, #f8cdda);
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+    font-weight: 500;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #007bff, 0 0 20px #007bff; }
+    to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4da6ff, 0 0 40px #4da6ff; }
+}
+
+main h1#welcome-message {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #f953c6, #b91d73);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes date-glow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse-light {
+    0% { box-shadow: 0 0 5px rgba(255,255,255,0.2); }
+    50% { box-shadow: 0 0 20px rgba(255,255,255,0.6); }
+    100% { box-shadow: 0 0 5px rgba(255,255,255,0.2); }
+}
+
+/* Notice Board Styles */
+.notice-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.notice-card h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+.notice-card ul {
+    padding-left: 20px;
+}
+.notice-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Align contact buttons to the left inside a notice card */
+.notice-card .contact-buttons {
+    justify-content: flex-start;
+}
+
+@keyframes button-glow {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Contact Buttons on Home Page */
+.contact-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.contact-btn {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px; /* Made bigger */
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem; /* Made bigger */
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    animation: button-glow 3s infinite ease-in-out;
+}
+.contact-btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.whatsapp-btn { background: linear-gradient(45deg, #25D366, #128C7E); }
+.telegram-btn { background: linear-gradient(45deg, #0088cc, #00A0E9); }
+
+/* Games List on Home Page */
+.games-list-container {
+    margin-top: 3rem;
+    background: #ffffff; /* Clean white background */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Softer shadow */
+    border: 1px solid #e9ecef; /* A light grey border */
+}
+.games-list-container h2 {
+    margin-top: 0;
+    color: #2c3e50; /* Dark slate blue for strong contrast */
+    font-size: 1.9rem; /* Slightly larger */
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef; /* Matching border color */
+    margin-bottom: 1.5rem; /* More space below the title */
+}
+.date-display {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 12px 20px; /* Slightly bigger padding */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: date-glow 10s ease infinite;
+    color: white;
+    border-radius: 50px; /* Pill shape */
+    font-weight: bold; /* Bolder text */
+    display: inline-block; /* To make the pill shape work */
+}
+.games-list {
+    list-style: none;
+    padding: 0;
+}
+
+@keyframes game-item-glow {
+    0%, 100% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+    50% { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); }
+}
+
+.games-list li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 5px 15px;
+    align-items: center;
+    padding: 25px 20px; /* Made bigger */
+    border-radius: 12px; /* More rounded corners */
+    margin-bottom: 1rem;
+    color: white; /* Text color for all items */
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: game-item-glow 4s infinite ease-in-out;
+}
+
+.games-list li:hover {
+    transform: scale(1.03); /* Slightly bigger hover effect */
+}
+
+/* A single, more premium gradient for all list items */
+.games-list li {
+    background: linear-gradient(135deg, #434343 0%, #000000 100%);
+}
+
+.games-list li:last-child {
+    border-bottom: none;
+}
+.game-name {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-weight: bold;
+    font-size: 1.6rem; /* Made bigger */
+    color: white;
+}
+.live-indicator {
+    background-color: #e74c3c;
+    color: white;
+    padding: 3px 8px; /* Made bigger */
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: 8px;
+    animation: blink 1.5s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
+.game-result {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    color: #f1c40f; /* Gold color for result */
+    font-weight: bold;
+    font-size: 1.4rem; /* Made bigger */
+}
+.game-status {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: end;
+    color: #ecf0f1; /* Light grey for status */
+    font-size: 1rem;
+    font-weight: 500;
+}
+.game-status.closed {
+    color: #ffdddd;
+    font-weight: bold;
+}
+.game-timer {
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.1); /* Lighter background */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.play-btn {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    background: linear-gradient(45deg, #f39c12, #f1c40f); /* Gold gradient */
+    color: #2c3e50; /* Dark text */
+    padding: 14px 28px; /* Made bigger */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s;
+    font-size: 1.2rem; /* Made bigger */
+    align-self: center; /* Vertically center the button */
+    border: none;
+}
+.play-btn:hover {
+    transform: scale(1.1);
+}
+.play-btn.disabled {
+    background: #7f8c8d; /* Grey color for disabled */
+    color: #bdc3c7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+footer { position: fixed; bottom: 0; left: 0; width: 100%; background: linear-gradient(90deg, #4e54c8, #8f94fb); color: white; box-shadow: 0 -2px 4px rgba(0,0,0,0.1); z-index: 1000; }
+.footer-nav { display: flex; justify-content: space-around; align-items: center; height: 60px; }
+.footer-nav a { color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500; }
+.footer-home-btn { 
+    font-weight: bold; 
+    color: #ffffff; /* White text for better contrast */
+    background: linear-gradient(45deg, #f39c12, #e67e22); /* Vibrant orange/gold gradient */
+    padding: 10px 20px;
+    border-radius: 50px; /* More rounded */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2); /* Shadow on top */
+    transform: translateY(-15px); /* Lift the button up */
+    border: 2px solid #ffffff; /* White border to make it pop */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.footer-home-btn:hover {
+    transform: translateY(-18px);
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    .header-right {
+        gap: 0.5rem;
+    }
+    .header-link {
+        font-size: 0.9rem; /* Make header links smaller on mobile */
+    }
+    .logo-styled {
+        font-size: 1.2rem;
+        text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #007bff, 0 0 8px #007bff;
+    }
+    .logo-second-line {
+        font-size: 0.7em;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    main h1#welcome-message {
+        font-size: 2rem;
+    }
+    .contact-buttons {
+        flex-direction: column;
+    }
+    .footer-nav a {
+        font-size: 1rem;
+    }
+    .games-list li {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 5px 10px;
+        padding: 15px 10px;
+    }
+    .game-name { font-size: 1.2rem; }
+    .game-result { font-size: 1.1rem; }
+    .game-status { font-size: 0.8rem; justify-self: end; }
+    .play-btn { padding: 10px 16px; font-size: 1rem; }
+}
+
+/* --- Game Play Page Styles --- */
+.game-header {
+    text-align: center;
+    background: linear-gradient(135deg, #1d2b4e 0%, #0c1324 100%); /* Dark space blue gradient */
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes game-title-glow {
+    0%   { color: #ff8c00; text-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00; }
+    25%  { color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+    50%  { color: #00ffff; text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+    75%  { color: #7fff00; text-shadow: 0 0 10px #7fff00, 0 0 20px #7fff00; }
+    100% { color: #ff8c00; text-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00; }
+}
+.game-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem; /* Made bigger */
+    font-weight: bold;
+    animation: game-title-glow 5s linear infinite;
+}
+.game-page-info {
+    margin: 5px 0;
+    color: #ecf0f1;
+    font-size: 1.2rem; /* Made bigger */
+}
+#game-page-date {
+    background: linear-gradient(45deg, #f39c12, #f1c40f); /* Gold gradient */
+    color: #2c3e50; /* Dark text for contrast */
+    padding: 8px 18px;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+#game-page-time {
+    font-weight: bold; 
+    font-size: 1.4rem; 
+    color: rgb(255, 249, 249); /* White text for contrast */
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    background: linear-gradient(120deg, #ff2d2d, #ff792d, #ffd700, #2dff2d, #2d2dff, #ff2dff, #ff2d2d);
+    background-size: 300% 300%;
+    animation: rgb-background-shift 8s ease infinite;
+    text-shadow: 0 0 5px rgba(61, 37, 197, 0.5);
+}
+
+@keyframes rgb-background-shift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes rgb-border-glow {
+    0%   { border-color: #ff0000; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+    25%  { border-color: #00ff00; box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); }
+    50%  { border-color: #0000ff; box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); }
+    75%  { border-color: #ffff00; box-shadow: 0 0 10px rgba(255, 255, 0, 0.5); }
+    100% { border-color: #ff00ff; box-shadow: 0 0 10px rgba(255, 0, 255, 0.5); }
+}
+
+.game-dashboard {
+    background-color: #ffffff; /* White background to make border pop */
+    padding: 2rem;
+    border-radius: 12px;
+    border: 3px solid;
+    animation: rgb-border-glow 4s linear infinite;
+}
+
+.game-dashboard h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styling for different sections inside the bid dashboard */
+.bid-section {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #dee2e6;
+}
+
+/* Specific background colors for each section */
+.bid-section.bid-type-section { background-color: #fdfdff; } /* Very light purple/blue */
+.bid-section.dynamic-inputs-section { background-color: #fffdfd; } /* Very light red/pink */
+.bid-section.amount-section { background-color: #fdfffb; } /* Very light green/yellow */
+
+/* Enhanced styles for labels and inputs in the game dashboard */
+.game-dashboard .input-group > label,
+.dynamic-input > label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(135deg, #6e45e2, #88d3ce);
+    padding: 12px 20px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    display: block; /* Ensure it takes full width of its container */
+    margin-bottom: 0; /* Remove bottom margin to connect with input */
+}
+
+.game-dashboard input[type="text"],
+.game-dashboard input[type="number"] {
+    padding: 18px 20px; /* Taller input box */
+    font-size: 1.5rem; /* Bigger text inside */
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-top: none; /* Remove top border to merge with label */
+    border-radius: 0 0 8px 8px; /* Round only the bottom corners */
+    background-color: #fdfdff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box;
+}
+
+.game-dashboard input[type="text"]:focus,
+.game-dashboard input[type="number"]:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* New Style for Bid Type Select Dropdown */
+.bid-type-select {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #34495e;
+    background-color: #ffffff;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    -webkit-appearance: none; /* Removes default styling on iOS */
+    -moz-appearance: none; /* Removes default styling on Firefox */
+    appearance: none; /* Removes default styling */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2334495e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+}
+
+/* Bid Type Buttons Grid */
+.bid-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.patti-suggestion-btn:hover, .patti-suggestion-btn.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Jodi Suggestions Grid */
+.jodi-suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.jodi-suggestion-btn {
+    padding: 10px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.jodi-suggestion-btn:hover, .jodi-suggestion-btn.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Single Digit Suggestions Grid */
+.single-digit-suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.single-digit-suggestion-btn {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.single-digit-suggestion-btn:hover, .single-digit-suggestion-btn.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Bids List Table Styles */
+.bids-list-container {
+    margin-top: 2rem;
+}
+.bids-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.bids-table th, .bids-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.bids-table th {
+    background-color: #f2f2f2;
+}
+.remove-bid-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+}
+
+#add-bid-btn {
+    background-color: #17a2b8;
+}
+
+.total-amount-container {
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.submit-all-btn {
+    margin-top: 1.5rem;
+    background-color: #28a745;
+    font-size: 1.2rem;
+    padding: 15px;
+}
+.submit-all-btn:hover {
+    background-color: #218838;
+}
+
+/* Payment Simulation Buttons */
+.payment-simulation-btns {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.payment-simulation-btns button {
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* QR Code container style from add-fund.html */
+#qrcode {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+#qrcode img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+/* Payment App Buttons on Add Fund page */
+.payment-app-btns {
+    display: grid; /* Use grid for better alignment */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.payment-app-btn {
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+    background-color: #f8f9fa; /* Light background */
+    border: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px; /* Fixed height */
+}
+.payment-app-btn:hover {
+    transform: scale(1.05);
+}
+
+.payment-app-btn img {
+    max-height: 100%;
+    max-width: 80%;
+    object-fit: contain;
+}
+
+.payment-app-btn.other-upi {
+    background-color: #546e7a; /* Blue Grey color */
+    color: white;
+    font-weight: 500;
+}
+
+.payment-numbers {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.payment-numbers p {
+    margin: 0.75rem 0;
+    font-size: 1.2rem;
+    color: #343a40;
+    font-weight: 500;
+}
+
+.payment-numbers strong {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+/* Specific colors for each payment method number */
+.payment-numbers .phonepe-number strong {
+    color: #6739B7; /* PhonePe purple */
+}
+.payment-numbers .paytm-number strong {
+    color: #00B9F1; /* Paytm blue */
+}
+.payment-numbers .gpay-number strong {
+    color: #4285F4; /* Google blue */
+}
+
+.screenshot-notice {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #fffbe6; /* Light yellow background */
+    border: 1px solid #ffe58f; /* Yellow border */
+    border-radius: 8px;
+    text-align: center;
+}
+
+.screenshot-notice p {
+    margin: 0;
+    font-size: 1rem;
+    color: #d46b08; /* Dark orange/brown text */
+}
+
+.screenshot-notice strong {
+    color: #cf1322; /* Red for "Important" */
+}
+
+.games-list li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 5px 15px;
+    align-items: center;
+    padding: 20px 15px;
+    border-bottom: 1px solid #e82643;
+    transition: transform 0.2s;
+    color: rgb(134, 44, 44);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.games-list li:hover {
+    transform: scale(1.02);
+}
+.games-list li:nth-child(12n+1) { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.games-list li:nth-child(12n+2) { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.games-list li:nth-child(12n+3) { background: linear-gradient(135deg, #3498db, #2980b9); }
+.games-list li:nth-child(12n+4) { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.games-list li:nth-child(12n+5) { background: linear-gradient(135deg, #34495e, #2c3e50); }
+.games-list li:nth-child(12n+6) { background: linear-gradient(135deg, #f1c40f, #f39c12); }
+.games-list li:nth-child(12n+7) { background: linear-gradient(135deg, #e67e22, #d35400); }
+.games-list li:nth-child(12n+8) { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.games-list li:nth-child(12n+9) { background: linear-gradient(135deg, #fd79a8, #e84393); }
+.games-list li:nth-child(12n+10) { background: linear-gradient(135deg, #6c5ce7, #a29bfe); }
+.games-list li:nth-child(12n+11) { background: linear-gradient(135deg, #00b894, #00cec9); }
+.games-list li:nth-child(12n+12) { background: linear-gradient(135deg, #ff7675, #d63031); }
+.games-list li:last-child {
+    border-bottom: none;
+}
+.game-name {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+}
+.live-indicator {
+    background-color: #e74c3c;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: 8px;
+    animation: blink 1.5s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
+.game-result {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.game-status {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: end;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.game-status.closed {
+    color: #ffdddd;
+    font-weight: bold;
+}
+.game-timer {
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.play-btn {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s;
+    font-size: 1.1rem;
+    align-self: center; /* Vertically center the button */
+}
+.play-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+.play-btn.disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+footer { position: fixed; bottom: 0; left: 0; width: 100%; background: linear-gradient(90deg, #4e54c8, #8f94fb); color: white; box-shadow: 0 -2px 4px rgba(0,0,0,0.1); z-index: 1000; }
+.footer-nav { display: flex; justify-content: space-around; align-items: center; height: 60px; }
+.footer-nav a { color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500; }
+.footer-home-btn { 
+    font-weight: bold; 
+    color: #ffffff; /* White text for better contrast */
+    background: linear-gradient(45deg, #f39c12, #e67e22); /* Vibrant orange/gold gradient */
+    padding: 10px 20px;
+    border-radius: 50px; /* More rounded */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2); /* Shadow on top */
+    transform: translateY(-15px); /* Lift the button up */
+    border: 2px solid #ffffff; /* White border to make it pop */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.footer-home-btn:hover {
+    transform: translateY(-18px);
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    .header-right {
+        gap: 0.5rem;
+    }
+    .header-link {
+        font-size: 0.9rem; /* Make header links smaller on mobile */
+    }
+    .logo-styled {
+        font-size: 1.2rem;
+        text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #007bff, 0 0 8px #007bff;
+    }
+    .logo-second-line {
+        font-size: 0.7em;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    main h1#welcome-message {
+        font-size: 2rem;
+    }
+    .contact-buttons {
+        flex-direction: column;
+    }
+    .footer-nav a {
+        font-size: 1rem;
+    }
+    .games-list li {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 5px 10px;
+        padding: 15px 10px;
+    }
+    .game-name { font-size: 1.2rem; }
+    .game-result { font-size: 1.1rem; }
+    .game-status { font-size: 0.8rem; justify-self: end; }
+    .play-btn { padding: 10px 16px; font-size: 1rem; }
+
+    /* Game Play Page Responsive Styles */
+    .game-header {
+        padding: 1.5rem;
+    }
+    .game-header h1 {
+        font-size: 2rem;
+    }
+    #game-page-date, #game-page-time {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+    .game-dashboard {
+        padding: 1rem;
+    }
+    .game-dashboard h2 {
+        font-size: 1.5rem;
+    }
+    .bid-section {
+        padding: 1rem;
+    }
+    #add-bid-btn, .submit-all-btn { font-size: 1rem; padding: 12px; }
+}
+
+/* --- Game Play Page Styles --- */
+.game-header {
+    text-align: center;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.game-header h1 {
+    margin: 0 0 10px 0;
+    color: #007bff;
+}
+.game-page-info {
+    margin: 5px 0;
+    color: #555;
+    font-size: 1.1rem;
+}
+.game-dashboard {
+    background-color: #eef2f7; /* Main softer background color */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Styling for different sections inside the bid dashboard */
+.bid-section {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem; /* Reduced space between sections */
+    border: 1px solid #dee2e6;
+}
+
+/* Specific background colors for each section */
+.bid-section.bid-type-section { background-color: #fdfdff; } /* Very light purple/blue */
+.bid-section.dynamic-inputs-section { background-color: #fffdfd; } /* Very light red/pink */
+.bid-section.amount-section { background-color: #fdfffb; } /* Very light green/yellow */
+
+/* Enhanced styles for labels and inputs in the game dashboard */
+.game-dashboard .input-group > label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.game-dashboard input[type="text"],
+.game-dashboard input[type="number"] {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.game-dashboard input[type="text"]:focus,
+.game-dashboard input[type="number"]:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Bid Type Buttons Grid */
+.bid-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.bid-type-btn {
+    width: 100%;
+    padding: 15px 10px; /* Increased padding */
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #ffffff; /* White background */
+    color: #495057; /* Darker text */
+    border: 1px solid #dee2e6; /* Lighter border */
+    border-radius: 6px; /* Rounded corners */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Subtle shadow */
+    transition: all 0.2s;
+}
+
+.bid-type-btn.active {
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradient for active state */
+    color: white;
+    border-color: transparent;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Stronger shadow when active */
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none;
+}
+
+/* Styles for dynamic input sections */
+.dynamic-input label {
+    margin-top: 1rem;
+}
+.dynamic-input label:first-child {
+    margin-top: 0;
+}
+
+/* Patti Suggestions Grid */
+.patti-suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.patti-suggestion-btn {
+    padding: 10px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.patti-suggestion-btn:hover, .patti-suggestion-btn.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Jodi Suggestions Grid */
+.jodi-suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.jodi-suggestion-btn {
+    padding: 10px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.jodi-suggestion-btn:hover, .jodi-suggestion-btn.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Single Digit Suggestions Grid */
+.single-digit-suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.single-digit-suggestion-btn {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.single-digit-suggestion-btn:hover, .single-digit-suggestion-btn.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Bids List Table Styles */
+.bids-list-container {
+    margin-top: 2rem;
+}
+.bids-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.bids-table th, .bids-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.bids-table th {
+    background-color: #f2f2f2;
+}
+.remove-bid-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+}
+
+#add-bid-btn {
+    background: linear-gradient(45deg, #17a2b8, #28c7d9);
+    font-size: 1.2rem;
+    padding: 15px;
+    font-weight: bold;
+    margin-top: 0; /* Removed extra space above the button */
+}
+
+.total-amount-container {
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.submit-all-btn {
+    margin-top: 1.5rem;
+    background-color: #28a745;
+    font-size: 1.2rem;
+    padding: 15px;
+}
+.submit-all-btn:hover {
+    background-color: #218838;
+}
+
+/* Payment Simulation Buttons */
+.payment-simulation-btns {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.payment-simulation-btns button {
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* QR Code container style from add-fund.html */
+#qrcode {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,546 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 2rem;
+}
+
+.admin-title-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.admin-title-container h1 {
+    color: #007bff; /* Blue color for the title */
+    margin: 0;
+    font-size: 2rem;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.admin-header > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.logout-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.export-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #17a2b8; /* Info color */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.withdrawal-requests-btn {
+    background-color: #ffc107; /* Yellow for warning/attention */
+    color: black;
+}
+
+.admin-dashboard-btn {
+    background-color: #1f2c5c; /* Dark blue for dashboard */
+}
+
+.user-list-btn {
+    background-color: #007bff; /* Primary blue */
+}
+
+.top-games-graph-btn {
+    background-color: #e83e8c; /* Pink for graphs */
+}
+
+.all-bids-btn {
+    background-color: #6f42c1; /* Purple for special sections */
+    color: white;
+}
+
+.reset-btn {
+    background-color: #6c757d; /* Grey for neutral actions */
+}
+
+.game-rates-btn {
+    background-color: #fd7e14; /* Orange for rates */
+}
+
+.manage-games-btn {
+    background-color: #20c997; /* Teal for management */
+}
+
+.send-notification-btn {
+    background-color: #ff6347; /* Tomato red for notifications */
+}
+
+.deleted-users-btn {
+    background-color: #6c757d; /* Grey for deleted users section */
+}
+
+/* Search container styles */
+.search-container {
+    margin: 1rem 0 2rem 0;
+    text-align: center;
+}
+
+#searchInput {
+    box-sizing: border-box;
+    padding: 0.5rem;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    flex-basis: 250px; /* Give cards a base width */
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.dashboard-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0;
+}
+
+.top-games-card {
+    flex-basis: 100%; /* Allow this card to take full width */
+}
+
+.top-games-card h3 {
+    border-bottom: 2px solid #6f42c1;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#top-games-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#top-games-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    border-bottom: 1px solid #eee;
+}
+#top-games-list li:last-child { border-bottom: none; }
+#top-games-list .game-amount { font-weight: bold; color: #28a745; }
+
+.top-games-container {
+    max-width: 600px;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+/* Chart container for analytics pages */
+.chart-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Report Link Card on Admin Dashboard */
+.report-link-card {
+    display: block;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.table-container {
+    margin-top: 2rem;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Styles for sortable table headers */
+.sortable {
+    cursor: pointer;
+}
+
+.sortable:hover {
+    background-color: #0069d9; /* Slightly darker blue on hover */
+}
+
+.sort-arrow {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Action buttons */
+.actions button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    margin-right: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.history-btn {
+    background-color: #ffc107;
+    padding: 8px 14px;
+    border-radius: 4px;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.edit-btn, .save-btn, .win-btn { background-color: #28a745; } /* Green for positive actions */
+.delete-btn, .loss-btn { background-color: #dc3545; } /* Red for negative actions */
+
+.balance-input {
+    width: 80px;
+    padding: 4px;
+}
+
+.password-input {
+    width: 100px;
+    padding: 4px;
+}
+
+.password-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-password-btn, .save-password-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    color: #007bff;
+}
+
+/* Order buttons in Manage Games */
+.order-actions {
+    text-align: center;
+}
+.order-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0 5px;
+}
+.order-actions button:disabled { cursor: not-allowed; opacity: 0.3; }
+
+/* Pagination Styles */
+.pagination-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination-container button {
+    width: auto;
+    padding: 8px 16px;
+    margin: 0 5px;
+}
+
+.pagination-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.page-info {
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+/* Styles for simple page footers (like in game-history) */
+.page-footer {
+    background: none;
+    box-shadow: none;
+    padding-top: 2rem;
+}
+
+/* Text utility classes */
+.text-center {
+    text-align: center;
+}
+
+.text-win {
+    color: green;
+}
+
+.text-loss {
+    color: red;
+}
+
+/* Styles for page containers in admin section */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 1rem;
+}
+
+/* Filters for All Bids History page */
+.filters-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filters-container label {
+    font-weight: 500;
+}
+
+.filters-container input[type="date"],
+.filters-container select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* --- Responsive Styles for Admin Panel --- */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem; /* Reduce body padding on smaller screens */
+    }
+
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .admin-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .admin-header div {
+        display: grid; /* Use grid for better control */
+        grid-template-columns: 1fr; /* Stack buttons in a single column */
+        gap: 0.75rem; /* Increase gap between buttons */
+        width: 100%; /* Ensure the container takes full width */
+    }
+
+    .export-button, .logout-button {
+        padding: 12px; /* Increase padding to make buttons bigger */
+        font-size: 1.1rem; /* Increase font size */
+        text-align: center; /* Center the text inside buttons */
+        width: 100%; /* Make buttons take full width */
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .dashboard-card {
+        flex-basis: auto; /* Let cards take full width */
+    }
+
+    #searchInput {
+        width: 90%;
+    }
+
+    .table-container {
+        overflow-x: auto; /* Make tables horizontally scrollable */
+    }
+
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .result-inputs {
+        grid-template-columns: 1fr; /* Stack form inputs vertically */
+    }
+
+    /* Responsive Table to Card Layout for User List */
+    .table-container table, 
+    .table-container thead, 
+    .table-container tbody, 
+    .table-container th, 
+    .table-container td, 
+    .table-container tr {
+        display: block;
+    }
+
+    .table-container thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .table-container tr {
+        border-left: 5px solid #ccc; /* Default border color */
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        border-top: 1px solid #eee;
+        border-right: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Add different border colors for each user card */
+    .table-container tr:nth-child(6n+1) { border-left-color: #1abc9c; } /* Turquoise */
+    .table-container tr:nth-child(6n+2) { border-left-color: #3498db; } /* Peter River */
+    .table-container tr:nth-child(6n+3) { border-left-color: #9b59b6; } /* Amethyst */
+    .table-container tr:nth-child(6n+4) { border-left-color: #e67e22; } /* Carrot */
+    .table-container tr:nth-child(6n+5) { border-left-color: #e74c3c; } /* Alizarin */
+    .table-container tr:nth-child(6n+6) { border-left-color: #34495e; } /* Wet Asphalt */
+
+    .table-container td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: right;
+    }
+
+    .table-container td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+}
+
+/* Specific style for notification form inputs */
+.notification-inputs {
+    grid-template-columns: 1fr;
+}
+
+/* Grand total card on top games report page */
+.grand-total-card {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Styles for "Add New User" form on User List page */
+.result-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.result-card h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.result-card .input-group label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+.result-card .input-group input {
+    font-size: 1.1rem;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+
+.result-card .save-btn {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px;
+    margin-top: 1rem;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+}

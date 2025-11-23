@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game History</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css"> <!-- Reusing admin table styles -->
+</head>
+<body>
+    <h1>Transaction & Game History</h1>
+
+    <div class="tabs-container">
+        <button class="tab-link active" data-tab="bid-history">Bid History</button>
+        <button class="tab-link" data-tab="deposit-history">Deposit History</button>
+        <button class="tab-link" data-tab="withdrawal-history">Withdrawal History</button>
+        <button class="tab-link" data-tab="winning-history">Winning History</button>
+    </div>
+
+    <div id="bid-history" class="tab-content active">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Transaction ID</th>
+                        <th>Game</th>
+                        <th>Bid</th>
+                        <th>Result</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="bid-history-list">
+                    <!-- Bid history data will be loaded here -->
+                </tbody>
+            </table>
+            <div id="bid-history-pagination" class="pagination-container"></div>
+        </div>
+    </div>
+
+    <div id="deposit-history" class="tab-content">
+        <!-- Content will be loaded by JS -->
+        <div id="deposit-history-pagination" class="pagination-container"></div>
+    </div>
+
+    <div id="withdrawal-history" class="tab-content">
+        <!-- Content will be loaded by JS -->
+        <div id="withdrawal-history-pagination" class="pagination-container"></div>
+    </div>
+
+    <div id="winning-history" class="tab-content">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Transaction ID</th>
+                        <th>Game</th>
+                        <th>Bid Type</th>
+                        <th>Winning Number</th>
+                        <th class="text-win">Amount Won</th>
+                    </tr>
+                </thead>
+                <tbody id="winning-history-list">
+                    <!-- Winning history data will be loaded here -->
+                </tbody>
+            </table>
+            <div id="winning-history-pagination" class="pagination-container"></div>
+        </div>
+    </div>
+
+    <div class="register-link page-footer"><p><a href="home.html">Back to Home</a></p></div>
+
+    <script src="data-store.js"></script>
+    <footer>
+        <div class="footer-nav">
+            <a href="game-history.html">📜 History</a>
+            <a href="home.html" class="footer-home-btn">🏠 Home</a>
+            <a href="add-fund.html">💸 Add Fund</a>
+        </div>
+    </footer>
+    <script src="user-panel.js"></script>
+    <script src="game-history.js"></script>
+</body>
+</html>

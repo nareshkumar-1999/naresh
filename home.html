@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="header-left">
+                <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                </button>
+                <a href="home.html" class="logo logo-styled"><span>MITHUN</span><span class="logo-second-line">🏺 MATKA</span></a>
+            </div>
+            <div class="header-right">
+                <a href="add-fund.html" class="header-link">💰 Add Fund</a>
+                <a href="notification.html" class="header-link">🔔 Notification</a>
+                <span id="wallet-balance" class="wallet-balance">👛 ₹0.00</span>
+            </div>
+        </nav>
+    </header>
+    <div id="dropdown-menu" class="dropdown-content"><!-- Sidebar links will be populated by JS --></div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <main>
+        <div class="marquee-container">
+            <div class="marquee-text">
+                <span>Full Rate | Fast Deposit | Fast Withdrawal | Play Game Anytime You Win</span>
+            </div>
+        </div>
+        <h1 id="welcome-message">Welcome, User!</h1>
+        <p>विश्वास का धंधा विश्वास के साथ | सबसे तेज़ पेमेंट की गारंटी 🙏</p>
+
+        <div class="contact-buttons">
+            <a href="https://wa.me/918965812465?text=Hello%20Admin" target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp-btn">📲 Contact on WhatsApp</a>
+            <a href="https://t.me/+918965812465" target="_blank" rel="noopener noreferrer" class="contact-btn telegram-btn">🚀 Contact on Telegram</a>
+        </div>
+
+        <div class="games-list-container">
+            <h2>Available Games</h2>
+            <div class="date-display">
+                <span id="current-date"></span>
+            </div>
+            <ul class="games-list" id="games-list">
+                <!-- Games will be loaded here dynamically by home.js -->
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="game-history.html">📜 History</a>
+            <a href="home.html" class="footer-home-btn">🏠 Home</a>
+            <a href="add-fund.html">💸 Add Fund</a>
+        </div>
+    </footer>
+    <script src="data-store.js"></script>
+    <script src="user-panel.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

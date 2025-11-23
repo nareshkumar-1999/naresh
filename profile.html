@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="profile-page">
+    <div class="login-container">
+        <div class="login-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 13c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"></path></svg>
+        </div>
+        <h2>User Profile</h2>
+        <div class="profile-pic-container">
+            <img src="https://via.placeholder.com/100" alt="Profile Picture" id="profile-pic" class="profile-pic">
+            <input type="file" id="photo-upload" accept="image/*" class="visually-hidden">
+            <button type="button" id="change-pic-btn" class="change-pic-btn">Change Photo</button>
+        </div>
+        <form id="profileForm">
+            <div class="input-group">
+                <span class="input-icon">👤</span>
+                <input type="text" id="name" placeholder="Full Name" required autocomplete="name">
+            </div>
+            <div class="input-group">
+                <span class="input-icon">📱</span>
+                <input type="tel" id="mobile" placeholder="Mobile Number" readonly>
+            </div>
+            <hr>
+            <h4>Bank Details</h4>
+            <div class="input-group">
+                <span class="input-icon">💳</span>
+                <input type="text" id="accountNumber" placeholder="Account Number">
+            </div>
+            <div class="input-group">
+                <span class="input-icon">#️⃣</span>
+                <input type="text" id="ifscCode" placeholder="IFSC Code">
+            </div>
+            <div class="input-group">
+                <span class="input-icon">🏦</span>
+                <input type="text" id="branchName" placeholder="Branch Name">
+            </div>
+            <div class="input-group">
+                <span class="input-icon">🔗</span>
+                <input type="text" id="upiId" placeholder="yourname@upi">
+            </div>
+            <div class="input-group">
+                <label for="save-button" class="visually-hidden">Save Profile Changes</label>
+                <button type="submit" id="save-button">Save Changes</button>
+            </div>
+        </form>
+        <div class="register-link">
+            <p><a href="home.html">Back to Home</a> | <a href="#" id="logout-btn">Logout</a></p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-nav">
+            <a href="game-history.html">📜 History</a>
+            <a href="home.html" class="footer-home-btn">🏠 Home</a>
+            <a href="add-fund.html">💸 Add Fund</a>
+        </div>
+    </footer>
+    <script src="api-config.js"></script>
+    <script src="user-panel.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

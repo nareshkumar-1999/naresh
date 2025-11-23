@@ -1,0 +1,30 @@
+{
+    "users": [
+        { "id": 999, "name": "Admin", "mobile": "8965812465", "password": "Baghel@100", "balance": 9999, "isAdmin": true, "photo": "", "accountNumber": "", "ifscCode": "", "branchName": "", "upiId": "", "isActive": true },
+        { "id": 101, "name": "Amit Kumar", "mobile": "9876543211", "password": "userpass", "balance": 500.00, "isAdmin": false, "photo": "", "accountNumber": "", "ifscCode": "", "branchName": "", "upiId": "", "isActive": true },
+        { "id": 102, "name": "Sunita Sharma", "mobile": "9876543212", "password": "userpass", "balance": 1250.50, "isAdmin": false, "photo": "", "accountNumber": "", "ifscCode": "", "branchName": "", "upiId": "", "isActive": true },
+        { "id": 103, "name": "Rahul Verma", "mobile": "9876543213", "password": "userpass", "balance": 0.00, "isAdmin": false, "photo": "", "accountNumber": "", "ifscCode": "", "branchName": "", "upiId": "", "isActive": true },
+        { "id": 104, "name": "Priya Singh", "mobile": "9876543214", "password": "userpass", "balance": 75.25, "isAdmin": false, "photo": "", "accountNumber": "", "ifscCode": "", "branchName": "", "upiId": "", "isActive": true }
+    ],
+    "history": [
+        { "userId": 101, "game": "Color Prediction", "result": "Win", "amount": 50, "date": "2023-10-27T10:00:00Z" },
+        { "userId": 102, "game": "Spin Wheel", "result": "Loss", "amount": 20, "date": "2023-10-27T11:30:00Z" },
+        { "userId": 101, "type": "Deposit", "amount": 500, "date": "2023-10-26T12:00:00Z", "status": "Success" }
+    ],
+    "games": [
+        { "id": 1, "name": "Sridevi", "openTime": "11:30 AM", "closeTime": "12:30 PM" },
+        { "id": 2, "name": "Time Bazar", "openTime": "01:15 PM", "closeTime": "02:15 PM" }
+    ],
+    "notifications": [
+        { "id": 1, "title": "Welcome!", "message": "Welcome to the new and improved server-based application!", "date": "2023-11-01T10:00:00Z" }
+    ],
+    "gameRates": {
+        "Single Digit": 95,
+        "Jodi Digit": 950,
+        "Single Pana": 1400,
+        "Double Pana": 2800,
+        "Triple Pana": 7000,
+        "Half Sangam": 13000,
+        "Full Sangam": 150000
+    }
+}

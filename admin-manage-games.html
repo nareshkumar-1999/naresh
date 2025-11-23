@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Games</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-header">
+        <h1>Manage Games</h1>
+        <a href="admin.html" class="logout-button">Back to Admin Panel</a>
+    </div>
+
+    <div class="page-container">
+        <!-- Add New Game Form -->
+        <div class="result-card">
+            <h3>Add New Game</h3>
+            <form id="add-game-form">
+                <div class="result-inputs">
+                    <div class="input-group">
+                        <label for="new-game-name">Game Name</label>
+                        <input type="text" id="new-game-name" placeholder="e.g., New Market" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="new-open-time">Open Time</label>
+                        <input type="time" id="new-open-time" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="new-close-time">Close Time</label>
+                        <input type="time" id="new-close-time" required>
+                    </div>
+                </div>
+                <button type="submit" class="save-btn">Add Game</button>
+            </form>
+        </div>
+
+        <!-- Existing Games Table -->
+        <div class="table-container">
+            <h2>Existing Games</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game Name</th>
+                        <th>Open Time</th>
+                        <th>Close Time</th>
+                        <th>Actions</th>
+                        <th>Order</th>
+                    </tr>
+                </thead>
+                <tbody id="games-list-body">
+                    <!-- Games will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        .result-card { background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .result-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    </style>
+
+    <script src="data-store.js"></script>
+    <script src="admin-manage-games.js"></script>
+</body>
+</html>

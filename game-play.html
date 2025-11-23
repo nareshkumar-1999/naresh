@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="header-left">
+                <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                </button>
+                <a href="home.html" class="logo logo-styled"><span>MITHUN</span><span class="logo-second-line">🏺 MATKA</span></a>
+            </div>
+            <div class="header-right">
+                <a href="add-fund.html" class="header-link">💰 Add Fund</a>
+                <a href="notification.html" class="header-link">🔔 Notification</a>
+                <span id="wallet-balance" class="wallet-balance">👛 ₹0.00</span>
+            </div>
+        </nav>
+    </header>
+    <div id="dropdown-menu" class="dropdown-content">
+        <!-- Sidebar links will be populated by JS -->
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <div class="page-container">
+        <div class="game-header">
+            <h1 id="game-page-title">Loading Game...</h1>
+            <p id="game-page-date" class="game-page-info"></p>
+            <p id="game-page-time" class="game-page-info"></p>
+        </div>
+
+        <div class="game-dashboard">
+            <h2>🎯 Place Your Bid 🎲</h2>
+            <form id="bidForm">
+                <div class="input-group bid-section bid-type-section">
+                    <label for="bid-type-select">👇 Select Bid Type:</label>
+                    <select id="bid-type-select" name="bid-type" class="bid-type-select" required>
+                        <option value="" disabled selected>👇 Please Select a Bid Type 👇</option>
+                        <option value="single-open">☀️ Single Open</option>
+                        <option value="single-close">🌙 Single Close</option>
+                        <option value="jodi">💑 Jodi</option>
+                        <option value="single-patti-open">🃏 Single Patti Open</option>
+                        <option value="single-patti-close">🃏 Single Patti Close</option>
+                        <option value="double-patti-open">🎴 Double Patti Open</option>
+                        <option value="double-patti-close">🎴 Double Patti Close</option>
+                        <option value="triple-patti-open">👑 Triple Patti Open</option>
+                        <option value="triple-patti-close">👑 Triple Patti Close</option>
+                        <option value="half-sangam-open">🌗 Half Sangam Open</option>
+                        <option value="half-sangam-close">🌗 Half Sangam Close</option>
+                        <option value="full-sangam">🌕 Full Sangam</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic input fields based on bid type -->
+                <div id="dynamic-inputs" class="bid-section dynamic-inputs-section">
+                    <div id="single-digit-input" class="input-group dynamic-input hidden">
+                        <label for="single-digit">🔢 Enter Digit (0-9):</label>
+                        <input type="text" id="single-digit" inputmode="numeric" pattern="[0-9]" maxlength="1" placeholder="e.g., 7">
+                        <div id="single-digit-suggestions" class="single-digit-suggestions-grid"></div>
+                    </div>
+                    <div id="jodi-digit-input" class="input-group dynamic-input hidden">
+                        <label for="jodi-digit">Enter Jodi (00-99):</label>
+                        <input type="text" id="jodi-digit" inputmode="numeric" pattern="[0-9]*" maxlength="2" placeholder="e.g., 42">
+                        <div id="jodi-suggestions" class="jodi-suggestions-grid"></div>
+                    </div>
+                    <div id="patti-input" class="input-group dynamic-input hidden">
+                        <label for="patti-digit">Enter Patti (e.g., 123):</label>
+                        <input type="text" id="patti-digit" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="Enter 3-digit patti or a single digit to see options">
+                        <div id="patti-suggestions" class="patti-suggestions-grid"></div>
+                    </div>
+                    <div id="half-sangam-input" class="input-group dynamic-input hidden">
+                        <label id="half-sangam-label-1" for="half-sangam-ank">Enter Open Ank (0-9):</label>
+                        <input type="text" id="half-sangam-ank" inputmode="numeric" pattern="[0-9]" maxlength="1" placeholder="e.g., 2">
+                        <label id="half-sangam-label-2" for="half-sangam-patti">Enter Close Patti (e.g., 123):</label>
+                        <input type="text" id="half-sangam-patti" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="e.g., 347">
+                    </div>
+                    <div id="full-sangam-input" class="input-group dynamic-input hidden">
+                        <label for="full-sangam-open">Enter Open Patti (e.g., 123):</label>
+                        <input type="text" id="full-sangam-open" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="e.g., 128">
+                        <label for="full-sangam-close">Enter Close Patti (e.g., 456):</label>
+                        <input type="text" id="full-sangam-close" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="e.g., 580">
+                    </div>
+                </div>
+
+                <div class="input-group bid-section amount-section">
+                    <label for="bid-amount">💰 Enter Amount:</label>
+                    <input type="number" id="bid-amount" placeholder="e.g., 10" min="10" required>
+                </div>
+                <button type="button" id="add-bid-btn">➕ Add Bid</button>
+            </form>
+
+            <div id="bids-list-container" class="bids-list-container hidden">
+                <h3>Your Bids</h3>
+                <table class="bids-table">
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Transaction ID</th>
+                            <th>Type</th>
+                            <th>Number</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bids-list">
+                        <!-- Added bids will appear here -->
+                    </tbody>
+                </table>
+                <div class="total-amount-container">
+                    <strong>Total Bid Amount:</strong> <span id="total-bid-amount">₹0.00</span>
+                </div>
+                <button type="button" id="submit-all-bids-btn" class="submit-all-btn">🚀 Submit All Bids</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="game-history.html">📜 History</a>
+            <a href="home.html" class="footer-home-btn">🏠 Home</a>
+            <a href="add-fund.html">💸 Add Fund</a>
+        </div>
+    </footer>
+
+    <script src="api-config.js"></script>
+    <script src="user-panel.js"></script>
+    <script src="game-play.js"></script>
+</body>
+</html>

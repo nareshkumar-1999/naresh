@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declare Game Results</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-header">
+        <h1>Declare Game Results</h1>
+        <a href="admin.html" class="logout-button">Back to Admin Panel</a>
+    </div>
+
+    <div class="page-container">
+        <h2>Results for: <span id="current-date"></span></h2>
+        <div id="results-list-container">
+            <!-- Game result forms will be loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <style>
+        .result-card { background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .result-card h3 { margin-top: 0; color: #007bff; }
+        .result-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+        .result-inputs .input-group { margin: 0; }
+        .result-inputs label { font-weight: 500; }
+        .result-inputs input { border: 1px solid #ccc; padding: 8px; border-radius: 4px; }
+        .result-card button { width: auto; padding: 10px 20px; margin-top: 1rem; background-color: #28a745; }
+    </style>
+
+    <script src="data-store.js"></script>
+    <script src="admin-results.js"></script>
+</body>
+</html>

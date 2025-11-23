@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Game Rates</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-header">
+        <h1>Manage Game Rates</h1>
+        <a href="admin.html" class="logout-button">Back to Admin Panel</a>
+    </div>
+
+    <div class="page-container">
+        <form id="game-rates-form">
+            <div class="result-card">
+                <h3>Edit Game Rates (for ₹10 bet)</h3>
+                <div id="rates-container" class="result-inputs">
+                    <!-- Rate inputs will be loaded here by JavaScript -->
+                </div>
+                <button type="submit" class="save-btn">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        /* Reusing some styles from admin-results.html */
+        .result-card { background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .result-card h3 { margin-top: 0; color: #007bff; }
+        .result-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .result-inputs .input-group { margin: 0; }
+        .result-inputs label { font-weight: 500; display: block; margin-bottom: 5px; }
+        .result-inputs input { border: 1px solid #ccc; padding: 8px; border-radius: 4px; width: 100%; box-sizing: border-box; }
+        .result-card button { width: auto; padding: 10px 20px; margin-top: 1.5rem; }
+    </style>
+
+    <script src="data-store.js"></script>
+    <script src="admin-game-rates.js"></script>
+</body>
+</html>

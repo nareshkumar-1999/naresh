@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-title-container"><h1>Admin Panel - User List</h1></div>
+    <div class="admin-header">
+        <!-- Title moved out -->
+        <div>
+            <a href="admin-deposits.html" class="export-button deposit-requests-btn">💰 Deposit Requests</a>
+            <a href="admin-withdrawals.html" class="export-button withdrawal-requests-btn">💸 Withdrawal Requests</a>
+            <a href="admin-user-list.html" class="export-button user-list-btn">👥 User List</a>
+            <a href="admin-analytics-dashboard.html" class="export-button admin-dashboard-btn">📊 Analytics Dashboard</a>
+            <a href="admin-top-games-graph.html" class="export-button top-games-graph-btn">📈 Top Games Graph</a>
+            <a href="admin-results.html" class="export-button">🏁 Declare Results</a>
+            <a href="admin-all-bids.html" class="export-button all-bids-btn">📜 All Bids History</a>
+            <a href="admin-game-rates.html" class="export-button game-rates-btn">⭐ Game Rates</a>
+            <a href="admin-manage-games.html" class="export-button manage-games-btn">⚙️ Manage Games</a>
+            <a href="admin-notifications.html" class="export-button send-notification-btn">🔔 Send Notification</a>
+            <a href="admin-deleted-users.html" class="export-button deleted-users-btn">🗑️ Deleted Users</a>
+            <button id="logout-btn-admin" class="logout-button">🔒 Logout</button>
+        </div>
+    </div>
+
+    <!-- Top Games Report Card -->
+    <a href="admin-top-games.html" class="report-link-card">
+        <h3>🏆 Top Games Report</h3>
+        <p>View a detailed report of all games ranked by total bid amount.</p>
+    </a>
+
+    <!-- Link to the JavaScript file for admin panel logic -->
+    <script src="data-store.js"></script>
+    <!-- Main admin logic is now in admin-home.js -->
+    <script src="admin-home.js"></script>
+</body>
+</html>

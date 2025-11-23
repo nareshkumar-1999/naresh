@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Help</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="header-left">
+                <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                    <div class="menu-bar"></div>
+                </button>
+                <a href="home.html" class="logo logo-styled"><span>MITHUN</span><span class="logo-second-line">🏺 MATKA</span></a>
+            </div>
+            <div class="header-right">
+                <a href="add-fund.html" class="header-link">💰 Add Fund</a>
+                <a href="notification.html" class="header-link">🔔 Notification</a>
+                <span id="wallet-balance" class="wallet-balance">👛 ₹0.00</span>
+            </div>
+        </nav>
+    </header>
+    <div id="dropdown-menu" class="dropdown-content">
+        <!-- Sidebar links will be populated by JS -->
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <div class="page-container">
+        <h1>Support & Help</h1>
+
+        <div class="notice-card">
+            <h3>Contact Us</h3>
+            <p>For any issues regarding deposits, withdrawals, or gameplay, please contact us on WhatsApp or Telegram. Our team is available to help you.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/918965812465?text=Hello%20Admin,%20I%20need%20help." target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp-btn">💬 WhatsApp Support</a>
+                <a href="https://t.me/+918965812465" target="_blank" rel="noopener noreferrer" class="contact-btn telegram-btn">✈️ Telegram Support</a>
+            </div>
+        </div>
+
+        <div class="notice-card">
+            <h3>Frequently Asked Questions (FAQs)</h3>
+            
+            <h4>How do I add funds?</h4>
+            <p>Go to the "Add Fund" page from the header or footer. Enter the amount you wish to add, generate the QR code, and pay using any UPI app. After successful payment, confirm it by clicking "I Have Paid".</p>
+
+            <h4>How do I withdraw my winnings?</h4>
+            <p>You can request a withdrawal from the "Withdraw Funds" option in the sidebar menu. Your request will be processed by our team during working hours.</p>
+
+            <h4>My withdrawal request is 'Pending'. What does it mean?</h4>
+            <p>A 'Pending' status means we have received your request and it is in the queue for processing. It will be 'Approved' or 'Rejected' by our team shortly.</p>
+
+            <h4>I forgot my password. What should I do?</h4>
+            <p>Currently, there is no automated password reset. Please contact our support team on WhatsApp, and they will assist you in resetting your password after verification.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="game-history.html">📜 History</a>
+            <a href="home.html" class="footer-home-btn">🏠 Home</a>
+            <a href="add-fund.html">💸 Add Fund</a>
+        </div>
+    </footer>
+
+    <script src="data-store.js"></script>
+    <script src="user-panel.js"></script>
+</body>
+</html>

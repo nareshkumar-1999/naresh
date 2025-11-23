@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Games Report</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-header">
+        <h1>🏆 Top Games Report</h1>
+        <a href="admin.html" class="logout-button">Back to Admin Panel</a>
+    </div>
+
+    <div class="page-container">
+        <div class="filters-container">
+            <div class="filter-group">
+                <label for="filter-date">View Stats for Date:</label>
+                <input type="date" id="filter-date">
+            </div>
+            <button id="reset-btn" class="logout-button reset-btn">View Today</button>
+        </div>
+
+        <div class="dashboard-container">
+            <div class="dashboard-card">
+                <h3>Total Users</h3>
+                <p id="total-users-value">0</p>
+            </div>
+            <div class="dashboard-card">
+                <h3>Total Wallet Balance</h3>
+                <p id="total-balance-value">₹0.00</p>
+            </div>
+            <div class="dashboard-card">
+                <h3>Today's Total Bids</h3>
+                <p id="today-total-bids">₹0.00</p>
+            </div>
+            <div class="dashboard-card">
+                <h3>Today's Winning Amount</h3>
+                <p id="today-winning-amount">₹0.00</p>
+            </div>
+            <div class="dashboard-card">
+                <h3>Today's Profit / Loss</h3>
+                <p id="today-profit-loss">₹0.00</p>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Game Name</th>
+                        <th>Total Bids (Count)</th>
+                        <th>Total Bid Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="top-games-report-body">
+                    <!-- Data will be loaded here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="dashboard-card grand-total-card">
+            <h3>Grand Total Bid Amount</h3>
+            <p id="grand-total-amount">₹0.00</p>
+        </div>
+    </div>
+
+    <script src="data-store.js"></script>
+    <script src="admin-top-games.js"></script>
+</body>
+</html>
